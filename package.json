@@ -1,0 +1,16 @@
+{
+  "name": "royale-arena",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser arena battles with bot matches and authoritative two-player rooms",
+  "scripts": {
+    "dev": "node --watch server/index.js",
+    "start": "node server/index.js",
+    "test": "node --test",
+    "check": "node --check server/index.js && node --check shared/game.js && node --check public/app.js && node --check public/arena.js"
+  },
+  "engines": { "node": ">=22" },
+  "dependencies": { "ws": "^8.18.3" },
+  "devDependencies": { "@playwright/test": "^1.56.1" }
+}
