@@ -1,0 +1,252 @@
+{
+  "sourceSha256": "4617b68b4e6d75dcb6f680033e518321c81744899d2e62faa2abcd18da007ebc",
+  "files": [
+    {
+      "path": "cards/knight.png",
+      "sha256": "e48b2809ea3eef5757e0520bbcba697148c1175784ebf9075e350b8e4ac3d571",
+      "sourceMember": "assets/image/chr/knight.png",
+      "transform": "byte copy"
+    },
+    {
+      "path": "cards/archers.png",
+      "sha256": "550d6027c86fdbd9b9d94c80510558cf6e54c952c03b6c4354b6b9ba2fb8dd34",
+      "sourceMember": "assets/image/chr/archers.png",
+      "transform": "byte copy"
+    },
+    {
+      "path": "cards/giant.png",
+      "sha256": "46ea658b64f7fb70cf64d0a4e425d646865c480474635f1cba23096b567268fc",
+      "sourceMember": "assets/image/chr/giant.png",
+      "transform": "byte copy"
+    },
+    {
+      "path": "cards/minipekka.png",
+      "sha256": "e82363df840830723c7871b668847a4acf75de64cb4e1be4ae563729301f905e",
+      "sourceMember": "assets/image/chr/mini_pekka.png",
+      "transform": "byte copy"
+    },
+    {
+      "path": "cards/minions.png",
+      "sha256": "766a6f3e32d625f7548fbeefa4b4cba8e1a3022653e1f3e35b62ca65800e587a",
+      "sourceMember": "assets/image/chr/minions.png",
+      "transform": "byte copy"
+    },
+    {
+      "path": "cards/musketeer.png",
+      "sha256": "ffb148ff3c5ab80abadee9d6763f12bed8793994a168fe3dde0de69cdef1a3f2",
+      "sourceMember": "assets/image/chr/musketeer_dl.png",
+      "transform": "byte copy"
+    },
+    {
+      "path": "cards/arrows.png",
+      "sha256": "d59c4aceb21bcb677f26c2c9cc2a95106afecc1acb7af18b5a77cd0633d712d5",
+      "sourceMember": "assets/image/chr/arrows.png",
+      "transform": "byte copy"
+    },
+    {
+      "path": "cards/goblins.png",
+      "sha256": "fad8289449c0979c054eefe83582c6d3297faed1bf6a259a06b7a15fc72e2131",
+      "sourceMember": "assets/image/chr/goblins.png",
+      "transform": "byte copy"
+    },
+    {
+      "path": "cards/fireball.png",
+      "sha256": "90d393d5d2913fdf14d9114ba37750db84a7b95e1b840224921119e444b3b734",
+      "sourceMember": "assets/sc/ui_spells_tex.sc",
+      "transform": "Zstandard decode; untile 32x32 RGB565; crop [600,1524,798,1777]"
+    },
+    {
+      "path": "king.png",
+      "sha256": "aab907588a001f32d35dffd7f81e53e149b77a23ea8904ecd73319ed06ab93a5",
+      "sourceMember": "assets/sc/ui_spells_tex.sc",
+      "transform": "Zstandard decode; untile 32x32 RGB565; crop [1200,508,1396,758]"
+    },
+    {
+      "path": "arena/training.png",
+      "sha256": "fa075fe191faca600a29b8635c8b7584c2fe974e6c9bf2bec27018bd2c3bcd02",
+      "sourceMember": "assets/sc/arena_training_tex.sc",
+      "transform": "Decode RGBA8888/RGB565 tiled atlases; assemble field, rotated river and two bridge crops"
+    },
+    {
+      "path": "arena/grass.png",
+      "sha256": "cba2317eb8fb0c45eb908a80d34e789b117f39da38d1be871490911ade3394ab",
+      "sourceMember": "assets/sc/arena_training_tex.sc",
+      "transform": "Decode tiled RGB565; crop [220,270,410,460]"
+    },
+    {
+      "path": "arena/bridge.png",
+      "sha256": "fb51120c6d78e78ee26d6a0119038e5c291538a400222be20c55aff2cf730e5e",
+      "sourceMember": "assets/sc/arena_training_tex.sc",
+      "transform": "Decode atlas; crop and resize bridge"
+    },
+    {
+      "path": "towers/blue-princess.png",
+      "sha256": "cb683f92f0453e6567ab74023a45b0c873850d76b9e3d18f6e800287152f32ba",
+      "sourceMember": "assets/sc/building_tower_tex.sc",
+      "transform": "Decode RGBA4444 tiled atlas; crop (563, 406, 752, 654); constituent art only"
+    },
+    {
+      "path": "towers/red-princess.png",
+      "sha256": "f3d9c505dd900767b66c7e1b13179374c1721a4aae89e2b9f45d4224086f0e61",
+      "sourceMember": "assets/sc/building_tower_tex.sc",
+      "transform": "Decode RGBA4444 tiled atlas; crop (787, 190, 989, 442); constituent art only"
+    },
+    {
+      "path": "towers/blue-king.png",
+      "sha256": "c801263f5c8fdf4652835d82486df7848a69ff26f7a9b06164be1dc9ed87312b",
+      "sourceMember": "assets/sc/building_tower_tex.sc",
+      "transform": "Decode RGBA4444 tiled atlas; crop (987, 420, 1177, 674); constituent art only"
+    },
+    {
+      "path": "towers/red-king.png",
+      "sha256": "99ea1600b653abc862365f163ab84aa5e4b0e424759fd4aff3970907e24d4893",
+      "sourceMember": "assets/sc/building_tower_tex.sc",
+      "transform": "Decode RGBA4444 tiled atlas; crop (360, 414, 554, 655); constituent art only"
+    },
+    {
+      "path": "units/knight.png",
+      "sha256": "4edf683425599a7700be48bda4cfa52c77b4273eabdfa48db934139190a4142d",
+      "sourceMember": "assets/sc/chr_knight_tex.sc",
+      "transform": "Decode SC texture; retain connected alpha component at (51, 80); one static blue frame, no recovered animation timeline"
+    },
+    {
+      "path": "units/archers.png",
+      "sha256": "8b2c957fcfa20d6ac87e5b64fc3021b7f2df45cf37521185d97426179ec958d5",
+      "sourceMember": "assets/sc/chr_archer_tex.sc",
+      "transform": "Decode SC texture; retain connected alpha component at (230, 60); one static blue frame, no recovered animation timeline"
+    },
+    {
+      "path": "units/giant.png",
+      "sha256": "bf3489d60ef59babd7e36f2f9c7cb778419ce24e82c278c6662cbac8aab55aac",
+      "sourceMember": "assets/sc/chr_giant_tex.sc",
+      "transform": "Decode SC texture; retain connected alpha component at (80, 60); one static blue frame, no recovered animation timeline"
+    },
+    {
+      "path": "units/minipekka.png",
+      "sha256": "8c2e64e35ce4a4d1ea37f8a44b422294fb7b8da112cc366450865750d91e7ffc",
+      "sourceMember": "assets/sc/chr_mini_pekka_tex.sc",
+      "transform": "Decode SC texture; retain connected alpha component at (320, 45); one static blue frame, no recovered animation timeline"
+    },
+    {
+      "path": "units/minions.png",
+      "sha256": "276f7d1e3215958dda30012c0703111bbe311fb18b1967b1c2f52dced59e832c",
+      "sourceMember": "assets/sc/chr_minion_tex.sc",
+      "transform": "Decode SC texture; retain connected alpha component at (470, 50); one static blue frame, no recovered animation timeline"
+    },
+    {
+      "path": "units/musketeer.png",
+      "sha256": "9ccc0f1a34d22410c9bb28b5d0b29a598a655fb8a17c21cb948398c255b1b59b",
+      "sourceMember": "assets/sc/chr_musketeer_tex.sc",
+      "transform": "Decode SC texture; retain connected alpha component at (40, 60); one static blue frame, no recovered animation timeline"
+    },
+    {
+      "path": "audio/battle.ogg",
+      "sha256": "e9b0e9d89f9c0c734438228794e9adf7c460b45aa9d86849b8627627df68ab4f",
+      "sourceMember": "assets/music/2min_loop_battle_01.ogg",
+      "transform": "byte copy"
+    },
+    {
+      "path": "audio/victory.ogg",
+      "sha256": "5473edc917a3a63092eb84c6394d68fadbcbc9d73659a3dc39a3ad57e6c9f0e8",
+      "sourceMember": "assets/music/scroll_win_02.ogg",
+      "transform": "byte copy"
+    },
+    {
+      "path": "audio/defeat.ogg",
+      "sha256": "edbea2c1e688c832430d798be72bd3983bb38a3d78ed67109d36bfcf4f1349b0",
+      "sourceMember": "assets/music/scroll_lose_01.ogg",
+      "transform": "byte copy"
+    },
+    {
+      "path": "audio/click.ogg",
+      "sha256": "56f0af72f1f6ab778357da4fc281a072661111f25a9250b0c37cfc66058a585b",
+      "sourceMember": "assets/sfx/button_click_02.ogg",
+      "transform": "byte copy"
+    },
+    {
+      "path": "audio/deploy.ogg",
+      "sha256": "1e70de9710c564b3f58f650d0e1aec989cbf0ead592d4f73a0c7ee477d57de55",
+      "sourceMember": "assets/sfx/deploy_timer_ding_03.ogg",
+      "transform": "byte copy"
+    },
+    {
+      "path": "audio/knight.ogg",
+      "sha256": "a0b8a6f19895cec543204652dc23d53343bcadf6607fe62404f64e2da0f7a14b",
+      "sourceMember": "assets/sfx/knight_deploy_31111.ogg",
+      "transform": "byte copy"
+    },
+    {
+      "path": "audio/archers.ogg",
+      "sha256": "c9eb08a19d7db65972f866a8594d9ffa451b2f99e005f337766775202766f55c",
+      "sourceMember": "assets/sfx/clash_archer_deploy_01.ogg",
+      "transform": "byte copy"
+    },
+    {
+      "path": "audio/giant.ogg",
+      "sha256": "a940d2a0708045e6886d33690a3c365f11d7af771d8a0d33953de00b93f60d01",
+      "sourceMember": "assets/sfx/giant_deploy_01.ogg",
+      "transform": "byte copy"
+    },
+    {
+      "path": "audio/minipekka.ogg",
+      "sha256": "50c996a28c2be9ce37b0fa81454274fa82c51b6260b054205f27ee2dda9288d2",
+      "sourceMember": "assets/sfx/minipekka_deploy_01.ogg",
+      "transform": "byte copy"
+    },
+    {
+      "path": "audio/musketeer.ogg",
+      "sha256": "934298b8ebe02cc6012a541d9f05f050bc8fc1d3f16e4ff1f2b69f653a201ec1",
+      "sourceMember": "assets/sfx/musketeer_deploy_01.ogg",
+      "transform": "byte copy"
+    },
+    {
+      "path": "audio/minions.ogg",
+      "sha256": "0d111cb411b364145895368547d15bc12786a7f8c8d5aeb1309925095b7aaf28",
+      "sourceMember": "assets/sfx/minion_deploy_01.ogg",
+      "transform": "byte copy"
+    },
+    {
+      "path": "audio/fireball.ogg",
+      "sha256": "af935647b3cc6d16115ecb146e0965d07d350c080b2def1a3bf4b4d192205da6",
+      "sourceMember": "assets/sfx/fireball_hit_01.ogg",
+      "transform": "byte copy"
+    },
+    {
+      "path": "fonts/supercell-magic.ttf",
+      "sha256": "17610588ba9a54fb540199fe6636c3209c46cf0fdd2471c4ede0a204d6596246",
+      "sourceMember": "assets/font/supercell-magic_0.ttf",
+      "transform": "byte copy"
+    },
+    {
+      "path": "fonts/supercell-text.ttf",
+      "sha256": "8bd0e6d40fbc59d1446df808c9c8eb0b75c1a0f5ef6f8fcdb50f2f5145b4ed20",
+      "sourceMember": "res/font/supercell_text_android_a_rg.ttf",
+      "transform": "byte copy"
+    },
+    {
+      "path": "fonts/supercell-headline.ttf",
+      "sha256": "a457ce9a949ac8e4f4f5a3fc9b60fe4e0f104ca627e6ebdc2035b90471171e5a",
+      "sourceMember": "res/font/supercellheadline_heavy.ttf",
+      "transform": "byte copy"
+    },
+    {
+      "path": "recovered-config.json",
+      "sha256": "0b7d171fe94f82cfa8e81f7def1ac481d545c4056b8e8985e66c2a3d0bcc98f4",
+      "sourceMember": "assets/csv_logic/*.csv",
+      "transform": "LZMA header repair; CSV projection and projectile join"
+    },
+    {
+      "path": "audio/arrows.ogg",
+      "sha256": "556ee756ea723ef55ffa4fc02afa0e52f8961b7c3c8fb93edf533939b56086d0",
+      "sourceMember": "assets/sfx/arrow_norm_impact_06.ogg",
+      "transform": "byte copy"
+    }
+  ],
+  "notes": [
+    "Selected local research assets; upstream copyright is retained.",
+    "Arena is assembled from decoded atlas crops, not a recovered renderer.",
+    "No native program code was executed; this is static asset/data recovery."
+  ],
+  "baseSha256": "bf3d60f74f1a81ac2560bc1ed9e602d8cacfcf637641f70a85da91763e04083d",
+  "assetPackSha256": "c0835176116202e863ce06386b39507e2d7661023b5af9bd443ea5a7b9a3f608"
+}
