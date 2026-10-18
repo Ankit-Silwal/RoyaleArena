@@ -11,15 +11,15 @@ clients cannot choose a team for deployment or submit health/elixir/state.
 
 Every message is a JSON object with `type`.
 
-| Type | Additional fields | Behavior |
-| --- | --- | --- |
-| `create` | `name` (1–20 chars) | Creates a private room; waits for one guest |
-| `join` | `room` (6 uppercase chars), `name` | Joins a waiting room; starts countdown |
-| `bot` | `name`, `difficulty` (`easy`, `normal`, `hard`) | Creates a match against the bot |
-| `deploy` | `slot` (integer 0–3), `x`, `y` (finite arena coordinates) | Attempts a card from the sender's hand |
-| `rematch` | none | Votes for another match; bot accepts automatically |
-| `leave` | none | Leaves the room; an active opponent wins by forfeit |
-| `ping` | none | Requests `pong` |
+| Type      | Additional fields                                         | Behavior                                            |
+| --------- | --------------------------------------------------------- | --------------------------------------------------- |
+| `create`  | `name` (1–20 chars)                                       | Creates a private room; waits for one guest         |
+| `join`    | `room` (6 uppercase chars), `name`                        | Joins a waiting room; starts countdown              |
+| `bot`     | `name`, `difficulty` (`easy`, `normal`, `hard`)           | Creates a match against the bot                     |
+| `deploy`  | `slot` (integer 0–3), `x`, `y` (finite arena coordinates) | Attempts a card from the sender's hand              |
+| `rematch` | none                                                      | Votes for another match; bot accepts automatically  |
+| `leave`   | none                                                      | Leaves the room; an active opponent wins by forfeit |
+| `ping`    | none                                                      | Requests `pong`                                     |
 
 Coordinates always use the authoritative world, even for the north player:
 18 wide × 32 high. Team 0 is south, team 1 is north. Troops deploy on your

@@ -19,7 +19,8 @@ share the invitation link/code. The second player joins through the same server
 address; joining starts a three-second countdown. Select one of four cards
 (or use keys 1–4), then click/tap your half to deploy a troop. Spells can target
 either half. Destroy the king tower or finish with more crowns. The final minute
-has double elixir, followed by sudden-death overtime and a tower-health tiebreak.
+has double elixir, followed by two minutes of sudden-death overtime and a
+tower-health tiebreak. Matches start at six elixir, with a maximum of ten.
 
 On the same Wi-Fi, the other player must open the host computer's LAN address,
 such as `http://192.168.1.10:3000`, and use that address in the invitation link.
@@ -35,11 +36,13 @@ the same server; configure the host's `PORT` environment variable as needed.
 npm run dev
 npm test
 npm run check
+npm run verify:assets
 postman request http://localhost:3000/api/health --no-report-events --script-post-request @api/health-check.js
 ```
 
 The game engine and HTTP/WebSocket integration tests use Node's test runner.
-Browser smoke checks are available separately as described in `test/browser-smoke.mjs`.
+Run `npm run test:browser` for browser smoke checks using an installed Chrome
+(`CHROME_CHANNEL=msedge` selects Edge). Screenshots go to ignored `.local/qa/`.
 API source: [protocol](docs/protocol.md), [OpenAPI health endpoint](api/openapi.json).
 
 ## Reconstruction and assets

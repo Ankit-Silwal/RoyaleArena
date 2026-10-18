@@ -1,13 +1,35 @@
 {
   "openapi": "3.1.0",
-  "info": { "title": "Royale Arena", "version": "0.1.0", "description": "Room and battle commands use the same-origin WebSocket /ws; see docs/protocol.md for message schemas and session behavior." },
+  "info": {
+    "title": "Royale Arena",
+    "version": "0.1.0",
+    "description": "Room and battle commands use the same-origin WebSocket /ws; see docs/protocol.md for message schemas and session behavior."
+  },
   "servers": [{ "url": "http://localhost:3000" }],
   "paths": {
     "/api/health": {
       "get": {
         "operationId": "getHealth",
         "summary": "Process readiness and current ephemeral room count",
-        "responses": { "200": { "description": "Arena is serving requests", "content": { "application/json": { "schema": { "type": "object", "required": ["ok", "rooms"], "properties": { "ok": { "const": true }, "rooms": { "type": "integer", "minimum": 0 } }, "additionalProperties": false }, "example": { "ok": true, "rooms": 0 } } } } }
+        "responses": {
+          "200": {
+            "description": "Arena is serving requests",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "required": ["ok", "rooms"],
+                  "properties": {
+                    "ok": { "const": true },
+                    "rooms": { "type": "integer", "minimum": 0 }
+                  },
+                  "additionalProperties": false
+                },
+                "example": { "ok": true, "rooms": 0 }
+              }
+            }
+          }
+        }
       }
     }
   }

@@ -1,0 +1,3 @@
+* text=auto eol=lf
+# Provenance hashes describe exact bytes, including recovered JSON line endings.
+public/assets/** -text

@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#101b2b" />
+    <meta
+      name="description"
+      content="A real-time arena battle. Build your push, defend your towers, and challenge a friend."
+    />
+    <title>Royale Arena — Enter the arena</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="masthead">
+        <a class="brand" href="/" aria-label="Royale Arena home"
+          ><span class="brand-mark">♛</span
+          ><span>ROYALE<span class="brand-arena">ARENA</span></span></a
+        ><span class="header-label">REAL-TIME TOWER BATTLES</span
+        ><span class="connection" id="connection"
+          ><i></i><span>Connecting</span></span
+        >
+      </header>
+      <main class="layout">
+        <aside class="panel lobby-panel">
+          <div class="eyebrow">
+            <span class="tiny-diamond"></span> THE BATTLE BEGINS HERE
+          </div>
+          <h1>Your arena.<br /><em>Your rules.</em></h1>
+          <p class="intro">
+            A little strategy. A well-timed push.<br />One crown to settle it
+            all.
+          </p>
+          <div class="divider"></div>
+          <label class="field-label" for="player-name">YOUR BATTLE NAME</label
+          ><input
+            id="player-name"
+            maxlength="20"
+            autocomplete="nickname"
+            placeholder="Enter your name"
+            value="Challenger"
+          />
+          <div id="lobby-controls">
+            <button class="button gold" id="create-room">
+              <span>⚑</span> Create a room <span class="button-arrow">↗</span>
+            </button>
+            <div class="join-row">
+              <input
+                id="room-code"
+                maxlength="6"
+                autocomplete="off"
+                autocapitalize="characters"
+                spellcheck="false"
+                aria-label="Six character room code"
+                placeholder="ROOM CODE"
+              /><button class="button outline" id="join-room">Join →</button>
+            </div>
+            <div class="or-divider">
+              <span></span> OR TRAIN SOLO <span></span>
+            </div>
+            <div class="bot-choice">
+              <label class="field-label" for="difficulty">BOT DIFFICULTY</label
+              ><select id="difficulty">
+                <option value="easy">Easy · Warm up</option>
+                <option value="normal" selected>Normal · A fair fight</option>
+                <option value="hard">Hard · Bring your best</option>
+              </select>
+            </div>
+            <button class="button blue" id="play-bot">
+              <span>⚔</span> Battle the bot <span class="button-arrow">→</span>
+            </button>
+          </div>
+          <div class="room-controls" id="room-controls" hidden>
+            <div class="room-label">YOUR PRIVATE ROOM</div>
+            <div class="room-invite">
+              <strong id="room-display">------</strong
+              ><button id="copy-invite" aria-label="Copy room invitation">
+                Copy link ↗
+              </button>
+            </div>
+            <p id="room-hint">
+              Share your link. Your battle starts when a friend joins.
+            </p>
+            <button class="button outline" id="leave-room">
+              ← Leave arena
+            </button>
+          </div>
+          <div
+            class="status-message"
+            id="status-message"
+            role="status"
+            aria-live="polite"
+          >
+            Preparing your connection to the arena…
+          </div>
+          <div class="lobby-foot">
+            <span class="live-dot"></span> PRIVATE ROOMS · NO SIGN-UP
+          </div>
+        </aside>
+        <section class="battle-column" aria-label="Battle arena">
+          <div class="match-header">
+            <div class="arena-label">
+              <span>⚔</span>
+              <div>
+                <strong>ROYAL GROUNDS</strong
+                ><small id="match-label">PRACTICE & FRIENDLY BATTLES</small>
+              </div>
+            </div>
+            <button
+              class="sound-button"
+              id="sound-button"
+              aria-label="Enable sound"
+              title="Toggle battle sound"
+            >
+              ♫<span id="sound-status">OFF</span>
+            </button>
+          </div>
+          <div class="arena-frame" id="arena-frame">
+            <div class="player-tag opponent-tag">
+              <span class="player-shield red">♜</span>
+              <div>
+                <strong id="opponent-name">Your next rival</strong
+                ><small id="opponent-label">THE NORTH SIDE</small>
+              </div>
+              <span class="crown-count red-text"
+                ><span id="opponent-crowns">0</span> ♛</span
+              >
+            </div>
+            <canvas
+              id="arena"
+              width="540"
+              height="960"
+              aria-label="Arena. Choose a card, then click your half of the battlefield to deploy."
+              tabindex="0"
+            ></canvas>
+            <div class="arena-timer" id="arena-timer">
+              <small id="timer-label">BATTLE TIME</small
+              ><strong id="timer">3:00</strong>
+            </div>
+            <div class="arena-overlay" id="arena-overlay">
+              <div class="overlay-crest">♛</div>
+              <h2 id="overlay-title">Glory awaits.</h2>
+              <p id="overlay-description">
+                Challenge a friend or take on the bot.
+              </p>
+            </div>
+            <div class="player-tag self-tag">
+              <span class="player-shield blue-shield">♜</span>
+              <div>
+                <strong id="self-name">Challenger</strong
+                ><small>YOUR SIDE</small>
+              </div>
+              <span class="crown-count blue-text"
+                ><span id="self-crowns">0</span> ♛</span
+              >
+            </div>
+            <div class="placement-tip" id="placement-tip" hidden>
+              CHOOSE A CARD TO DEPLOY
+            </div>
+          </div>
+          <div class="deck-panel">
+            <div class="deck-topline">
+              <span id="deck-instruction">YOUR BATTLE DECK</span
+              ><span class="key-hint"
+                >SELECT <kbd>1</kbd><kbd>2</kbd><kbd>3</kbd><kbd>4</kbd></span
+              >
+            </div>
+            <div class="deck-row">
+              <div class="hand" id="hand"></div>
+              <div class="next-card">
+                <span>NEXT</span>
+                <div id="next-card">?</div>
+              </div>
+            </div>
+            <div class="elixir-row">
+              <span class="elixir-drop">♦</span
+              ><strong id="elixir-number">0</strong>
+              <div
+                class="elixir-bar"
+                id="elixir-bar"
+                role="progressbar"
+                aria-label="Elixir"
+                aria-valuemin="0"
+                aria-valuemax="10"
+                aria-valuenow="0"
+              ></div>
+              <span class="elixir-max">10</span>
+            </div>
+          </div>
+        </section>
+        <aside class="right-column">
+          <section class="panel guide-panel">
+            <div class="eyebrow">THE ART OF THE ARENA</div>
+            <h2>Every card.<br />A new possibility.</h2>
+            <div class="guide-item">
+              <span>01</span>
+              <div>
+                <h3>Build your push</h3>
+                <p>
+                  Choose a card, then tap your side of the arena to deploy it.
+                </p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <span>02</span>
+              <div>
+                <h3>Spend wisely</h3>
+                <p>
+                  Elixir replenishes over time. Save a little for a surprise
+                  defense.
+                </p>
+              </div>
+            </div>
+            <div class="guide-item">
+              <span>03</span>
+              <div>
+                <h3>Take the crown</h3>
+                <p>
+                  Bring down the King Tower to win. At the bell, the most crowns
+                  wins.
+                </p>
+              </div>
+            </div>
+            <div class="guide-tip">
+              <span>✦</span>
+              <p>
+                <strong>A royal tip</strong>Let a Giant lead the charge. Your
+                ranged troops will appreciate the cover.
+              </p>
+            </div>
+          </section>
+          <section class="panel roster-panel">
+            <div class="eyebrow">A DECK WORTH FIGHTING FOR</div>
+            <div class="roster-grid" id="roster"></div>
+            <p>8 cards. Endless ways to play.</p>
+          </section>
+          <div class="project-note">
+            An independent browser arena.<br />Local simulation · Real-time
+            multiplayer
+          </div>
+        </aside>
+      </main>
+      <footer class="page-footer">
+        <span>STRATEGY WINS CROWNS.</span
+        ><span
+          >Built for friendly rivalries <span class="footer-star">✦</span></span
+        >
+      </footer>
+    </div>
+    <dialog id="result-dialog">
+      <div class="result-crest" id="result-crest">♛</div>
+      <div class="eyebrow" id="result-eyebrow">BATTLE COMPLETE</div>
+      <h2 id="result-title">Victory!</h2>
+      <p id="result-detail"></p>
+      <div class="result-score" id="result-score"></div>
+      <button class="button gold" id="rematch">Battle again ↗</button
+      ><button class="button subtle" id="result-leave">Return to lobby</button>
+      <p id="rematch-status" role="status"></p>
+    </dialog>
+    <script type="module" src="/app.js"></script>
+  </body>
+</html>

@@ -8,9 +8,17 @@
     "dev": "node --watch server/index.js",
     "start": "node server/index.js",
     "test": "node --test",
-    "check": "node --check server/index.js && node --check shared/game.js && node --check public/app.js && node --check public/arena.js"
+    "check": "node --check server/index.js && node --check shared/game.js && node --check public/app.js && node --check public/arena.js",
+    "test:browser": "node scripts/browser-smoke.mjs",
+    "verify:assets": "node scripts/verify-assets.mjs"
   },
-  "engines": { "node": ">=22" },
-  "dependencies": { "ws": "^8.18.3" },
-  "devDependencies": { "@playwright/test": "^1.56.1" }
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "ws": "^8.18.3"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.56.1"
+  }
 }

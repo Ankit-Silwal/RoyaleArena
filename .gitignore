@@ -9,4 +9,5 @@ playwright-report/
 *.apk
 *.apks
 *.so
-
+__pycache__/
+*.pyc
