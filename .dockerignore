@@ -1,0 +1,7 @@
+.git
+node_modules
+.local
+test-results
+playwright-report
+*.apk
+*.apks
