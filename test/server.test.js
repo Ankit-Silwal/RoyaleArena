@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import { once } from 'node:events';
 import { WebSocket } from 'ws';
 import { createArenaServer } from '../server/index.js';
+import { CARDS, step } from '../shared/game.js';
 
 async function setup(t) {
   const arena = createArenaServer();
@@ -95,6 +96,28 @@ test('invalid commands, missing rooms, bot match and rematch are handled', async
   assert.equal(restarted.game.winner, null);
   a.send({ type: 'leave' }); await a.next(m => m.type === 'left');
   assert.equal(arena.rooms.size, 0);
+});
+
+test('deployment binds the authenticated socket team and protects server resources', async t => {
+  const arena = await setup(t), a = await arena.client(), b = await arena.client();
+  a.send({ type: 'create', name: 'South' });
+  const joined = await a.next(m => m.type === 'joined');
+  b.send({ type: 'join', room: joined.room, name: 'North' });
+  await b.next(m => m.type === 'joined');
+  const game = arena.rooms.get(joined.room).game;
+  step(game, 3);
+  for (const [team, client] of [[0, a], [1, b]]) {
+    const slot = game.players[team].hand.findIndex(id => CARDS.find(c => c.id === id).kind === 'troop');
+    const card = CARDS.find(c => c.id === game.players[team].hand[slot]);
+    const before = game.players[team].elixir;
+    client.send({ type: 'deploy', slot, x: 4, y: team === 0 ? 8 : 24, elixir: 999, team: 1 - team });
+    assert.equal((await client.next(m => m.type === 'error')).code, 'INVALID_DEPLOY');
+    assert.ok(game.players[team].elixir >= before, 'invalid placement did not spend elixir');
+    client.send({ type: 'deploy', slot, x: 4, y: team === 0 ? 21 : 11, team: 1 - team });
+    await client.next(m => m.type === 'state' && m.game?.units.some(u => u.team === team));
+    assert.equal(game.units.filter(u => u.team === team).length, card.count);
+    assert.ok(game.players[team].elixir < before);
+  }
 });
 
 test('cross-origin browser websocket attempts are rejected', async t => {

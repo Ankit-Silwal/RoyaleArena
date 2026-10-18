@@ -47,6 +47,12 @@ or -1 for a draw. Cards are described by `GET /shared/game.js`'s exported
 `{id,team,card,x,y,hp,maxHp,radius,hitAt}`; effects have
 `{id,type,team,x,y,...}`. Additional rendering fields are allowed.
 
+Matches start at six elixir (maximum ten), with 180 seconds of regulation and
+120 seconds of sudden-death overtime. Elixir regenerates every 2.8 seconds,
+doubling in the final regulation minute and first overtime minute, then tripling
+in the final overtime minute. Spawned troops have a one-second deployment delay
+before moving or attacking.
+
 Disconnecting during a match forfeits immediately. Reconnection starts a new
 session; there is no hidden reconnect identity. The remaining player can return
 to the lobby or create a new room. Rematches require both human votes. A room
